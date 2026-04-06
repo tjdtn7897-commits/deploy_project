@@ -18,13 +18,13 @@ app.get("/api/board", (req, res) => {
 });
 
 const path = require(`path`);
-const pubilcPath = path.join(__dirname, "dist");
+const pubilcPath = path.join(__dirname, "public");
 app.use(express.static(pubilcPath));
 
 app.get("/", function (req, res) {
-  res.sendFile(path.join(__dirname, "./dist", "index.html"));
+  res.sendFile(path.join(__dirname, "./public", "index.html"));
 });
 
 app.use((req, res, next) => {
-  res.status(404).sendFile(path.join(__dirname, "./dist", "index.html"));
+  res.status(404).sendFile(path.join(__dirname, "./public", "index.html"));
 });
